@@ -1,12 +1,13 @@
 [tool.poetry]
-name = "fastapi"
+name = "fast_api_zero"
 version = "0.1.0"
 description = ""
 authors = ["RaissaAndradeS <221035077@aluno.unb.br>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "3.12.*"
+fastapi = "^0.111.1"
 
 
 [build-system]
