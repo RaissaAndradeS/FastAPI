@@ -18,3 +18,7 @@ FastAPI com Dunossauro, é uma experiência prática no uso do FastAPI.
 - Uvicorn
 - SQLAlchemy
 - JWT
+
+
+
+-- fastapi dev fast_zero/app.py
