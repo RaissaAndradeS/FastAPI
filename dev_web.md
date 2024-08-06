@@ -19,5 +19,11 @@ Exemplo do restaurante, cliente chama o garçom que faz o pedido na cozinha e de
 
 Precisa de uma aplicação que esta sendo servida por alguém (uvicorn) nesse caso, e por esse servidor que estamos mandando algumas requisições, ele emite algumas respostas pra gente.
 
-<center> Cliente <--> Servidor <--> Aplicação Python </center>
+<center> Cliente <--> Servidor <--> Aplicação Python </center> <br>
 
+O Uvicorn é um "servidor de aplicação", ASGI.  
+
+<center>Cliente <-Requisita-> Uvicorn <-Repassa-> Aplicação Python </center>
+
+### Rede local 
+Até o momento era o "loopback", o nosso pc é o cliente e o servidor ao mesmo tempo. 
