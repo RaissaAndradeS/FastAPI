@@ -27,3 +27,10 @@ O Uvicorn é um "servidor de aplicação", ASGI.
 
 ### Rede local 
 Até o momento era o "loopback", o nosso pc é o cliente e o servidor ao mesmo tempo. 
+
+### Modelo padrão da Web
+
+- URL: Localizador Uniforme de Recursos = um endereço de rede pelo qual podemos nos comunicar com um computador na rede.
+- HTTP: Um protocolo que especifica como deve ocorrer a comunicação entre dispositivos.
+- HTML: A linguagem usada para criar e estruturar páginas na web.
+
