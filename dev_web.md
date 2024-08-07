@@ -34,3 +34,5 @@ Até o momento era o "loopback", o nosso pc é o cliente e o servidor ao mesmo t
 - HTTP: Um protocolo que especifica como deve ocorrer a comunicação entre dispositivos.
 - HTML: A linguagem usada para criar e estruturar páginas na web.
 
+HTTP = Hypertext Transfer Protocol (Protocolo de Transfêrencia de Hipertexto), é o protocolo fundamental na web para a transferência de dados e comunicação entre clientes e servidores. Ele se baseia no modelo de requisição-resposta: onde o cliente faz uma requisição ao servidor, que responde a essa requisição. Essas requisições e respostas são formatadas conforme as regras do protocolo HTTP.
+
