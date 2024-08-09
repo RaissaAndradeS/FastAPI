@@ -53,3 +53,22 @@ Server: Fornece informações sobre o software do servidor.
 
 - DELETE: exclui um recurso. Ou seja, remove um usuário específico do sistema.
 
+### Código de resposta
+
+O servidor responde o que aconteceu, têm 5 classes de respostas. <br>
+
+site: http with dogs ou http cats. <br>
+
+iana = codigos. <br>
+
+### APIs
+Application Programming Interfaces. <br>
+Como me comunico com aplicações através da interface. <br>
+
+### Json
+Parece um dicionário python. <br>
+"Só" o dado. <br>
+A partir desse dado "bruto" que da pra fazer app mobile, desktop, frontend e afins. <br>
+
+### Pydantic
+Serve para documentar. <br>
