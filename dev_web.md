@@ -72,3 +72,11 @@ A partir desse dado "bruto" que da pra fazer app mobile, desktop, frontend e afi
 
 ### Pydantic
 Serve para documentar. <br>
+
+### Operações com dados 
+
+* Create (Criar) : Adicionar novos registros 
+* Read (Ler) : Recuperar registros existentes
+* Update (Atualizar) : Modificar registros existentes
+* Delete (Excluir) : Remover registros existentes
+ 
