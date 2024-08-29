@@ -80,3 +80,6 @@ Serve para documentar. <br>
 * Update (Atualizar) : Modificar registros existentes
 * Delete (Excluir) : Remover registros existentes
  
+ ## Introdução ao SQLAlchemy
+
+ A ideia principal é que você consiga trabalhar com banco de dados SQL de maneira mais natural.
