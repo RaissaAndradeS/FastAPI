@@ -1,5 +1,6 @@
 from datetime import datetime
-from sqlalchemy.orm import registry, Mapped, mapped_column
+from sqlalchemy.sql import func
+from sqlalchemy.orm import Mapped, mapped_column, registry
 
 table_registry = registry()
 
@@ -8,7 +9,7 @@ table_registry = registry()
 class User:
     __tablename__ = 'users'
 
-    id: Mapped[int] = mapped_column(init= False, primary_key=True)
+    id: Mapped[int] = mapped_column(init=False, primary_key=True)
     username: Mapped[str] = mapped_column(unique=True)
     password: Mapped[str]
     email: Mapped[str] = mapped_column(unique=True)
