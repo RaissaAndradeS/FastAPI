@@ -1,6 +1,7 @@
 from datetime import datetime
-from sqlalchemy.sql import func
+
 from sqlalchemy.orm import Mapped, mapped_column, registry
+from sqlalchemy.sql import func
 
 table_registry = registry()
 
