@@ -43,8 +43,9 @@ def session():
 def user(session):
     pwd = 'testtest'
     user = User(
-        username='Teste', email='teste@test.com',
-        password=get_password_hash(pwd)
+        username='Teste',
+        email='teste@test.com',
+        password=get_password_hash(pwd),
     )
 
     session.add(user)

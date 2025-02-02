@@ -11,7 +11,7 @@ def test_read_root_deve_retornar_ok_e_ola_mundo(client):
 def test_get_token(client, user):
     response = client.post(
         '/token',
-        data={'username': user.email, 'password': user.clean_password}
+        data={'username': user.email, 'password': user.clean_password},
     )
 
     token = response.json()
