@@ -52,3 +52,12 @@ def user(session):
     user.clean_password = pwd  # Chama se Monkey Patch, altera um objeto em tempo de execução
 
     return user
+
+
+@pytest.fixture
+def token(client, user):
+    response = client.post(
+        '/token',
+        data={'username': user.email, 'password': user.clean_password},
+    )
+    return response.json(['acess_token'])

@@ -97,7 +97,7 @@ def delete_user(
             status_code=HTTPStatus.BAD_REQUEST,
             detail='Not enough permissions'
         )
-        
+
     session.delete(current_user)
     session.commit()
 
