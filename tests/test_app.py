@@ -69,4 +69,5 @@ def test_delete_user(client, user):
 
     assert response.json() == {'message': 'User deleted'}
 
-def test_get_token()
+def test_get_token(client, user):
+    ...
