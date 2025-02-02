@@ -7,8 +7,12 @@ from sqlalchemy.orm import Session
 
 from fast_zero.database import get_session
 from fast_zero.models import User
-from fast_zero.schemas import Message, UserList, UserPublic, UserSchema
-from fast_zero.security import get_password_hash, verify_password
+from fast_zero.schemas import Message, Token, UserList, UserPublic, UserSchema
+from fast_zero.security import (
+    create_access_token,
+    get_password_hash,
+    verify_password,
+)
 
 app = FastAPI()
 
@@ -104,7 +108,7 @@ def delete_user(user_id: int, session: Session = Depends(get_session)):
     return {'message': 'User deleted'}
 
 
-@app.post('/token')
+@app.post('/token', response_model=Token)
 def login_for_acess_token(
     form_data: OAuth2PasswordRequestForm = Depends(),
     session: Session = Depends(get_session)
@@ -115,3 +119,7 @@ def login_for_acess_token(
         raise HTTPException(
             status_code=400, detail='Incorrect email or password'
         )
+
+    acess_token = create_access_token(data={'sub': user.email})
+
+    return {'acess_token': acess_token, 'token_type': 'Bearer'}
