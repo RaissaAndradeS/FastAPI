@@ -6,6 +6,7 @@ from sqlalchemy.pool import StaticPool
 from fast_zero.app import app
 from fast_zero.database import get_session
 from fast_zero.models import User, table_registry
+from fast_zero.security import get_password_hash
 
 
 @pytest.fixture
@@ -39,12 +40,15 @@ def session():
 
 @pytest.fixture
 def user(session):
+    pwd = 'testtest'
     user = User(
-        username='Teste', email='teste@test.com', passeword='testtest'
+        username='Teste', email='teste@test.com', password=get_password_hash(pwd)
     )
 
     session.add(user)
     session.commit()
     session.refresh(user)
+
+    user.clean_password = pwd  # Chama se Monkey Patch, altera um objeto em tempo de execução
 
     return user

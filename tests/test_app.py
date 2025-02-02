@@ -15,7 +15,7 @@ def test_create_user(client):
         '/users/',
         json={
             'username': 'testusername',
-            'passeword': 'password',
+            'password': 'password',
             'email': 'test@test.com',
         },
     )
@@ -69,5 +69,15 @@ def test_delete_user(client, user):
 
     assert response.json() == {'message': 'User deleted'}
 
+
 def test_get_token(client, user):
-    ...
+    response = client.post(
+        '/token',
+        data={'username': user.email, 'password': user.clean_password}
+    )
+
+    token = response.json()
+
+    assert response.status_code == HTTPStatus.OK
+    assert token['token_type'] == 'Bearer'
+    assert 'acess_token' in token
