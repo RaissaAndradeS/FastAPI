@@ -42,15 +42,11 @@ quote-style = 'single'
 
 [tool.taskipy.tasks]
 run = 'fastapi dev fast_zero/app.py'
-
 pre_test = 'task lint'
-test = 'pytest --cov=fast_zero -s -x -VV'
+test = 'pytest --cov=fast_zero -VV'
 post_test = 'coverage html'
-
 lint = 'ruff check . && ruff check . --diff'
 format = 'ruff check . --fix && ruff format .'
-
-
 
 [build-system]
 requires = ["poetry-core"]

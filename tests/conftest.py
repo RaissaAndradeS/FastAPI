@@ -1,4 +1,5 @@
 import pytest
+from fastapi.testclient import TestClient
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.pool import StaticPool
@@ -42,14 +43,16 @@ def session():
 def user(session):
     pwd = 'testtest'
     user = User(
-        username='Teste', email='teste@test.com', password=get_password_hash(pwd)
+        username='Teste', email='teste@test.com',
+        password=get_password_hash(pwd)
     )
 
     session.add(user)
     session.commit()
     session.refresh(user)
 
-    user.clean_password = pwd  # Chama se Monkey Patch, altera um objeto em tempo de execução
+    user.clean_password = pwd
+    # Chama se Monkey Patch, altera um objeto em tempo de execução
 
     return user
 
@@ -57,7 +60,7 @@ def user(session):
 @pytest.fixture
 def token(client, user):
     response = client.post(
-        '/token',
+        '/auth/token',
         data={'username': user.email, 'password': user.clean_password},
     )
     return response.json(['acess_token'])
