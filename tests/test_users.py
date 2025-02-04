@@ -31,13 +31,13 @@ def test_read_users(client):
     assert response.json() == {'users': []}
 
 
-def test_read_users_with_users(client, user):
+def test_read_users_with_users(client, user, other_user):
     user_schema = UserPublic.model_validate(user).model_dump()
 
     response = client.get('/users/')
 
     assert response.status_code == HTTPStatus.OK
-    assert response.json() == {'users': [user_schema]}
+    assert response.json() == {'users': [user_schema, other_user]}
 
 
 def test_update_user(client, user, token):
@@ -77,9 +77,9 @@ def test_delete_wrong_user(client, user, token):
     assert response.json() == {'detail': 'Not enough permissions'}
 
 
-def test_update_user_with_wrong_user(client, user, token):
+def test_update_user_with_wrong_user(client, other_user, token):
     response = client.put(
-        f'/users/{user.id + 1}',
+        f'/users/{other_user.id}',
         headers={'Authorization': f'Bearer {token}'},
         json={
             'username': 'bob',
