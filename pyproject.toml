@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "fast_api_zero"
+name = "fast_zero"
 version = "0.1.0"
 description = ""
 authors = ["RaissaAndradeS <221035077@aluno.unb.br>"]
