@@ -7,12 +7,12 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "3.12.*"
-fastapi = "^0.115.8"
+fastapi = {extras = ["standard"], version = "^0.115.8"}
 sqlalchemy = "^2.0.32"
 pydantic-settings = "^2.6.1"
 alembic = "^1.14.0"
 pwdlib = {extras = ["argon2"], version = "^0.2.1"}
-python-multipart = "^0.0.17"
+python-multipart = "^0.0.18"
 pyjwt = "^2.10.1"
 psycopg = {extras = ["binary"], version = "^3.2.4"}
 

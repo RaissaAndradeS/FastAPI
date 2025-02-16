@@ -25,7 +25,7 @@ class UserList(BaseModel):
 
 
 class Token(BaseModel):
-    acess_token: str
+    access_token: str
     token_type: str
 
 
@@ -44,6 +44,17 @@ class TodoList(BaseModel):
 
 
 class TodoUpdate(BaseModel):
+    title: str | None = None
+    description: str | None = None
+    state: TodoState | None = None
+
+
+class FilterPage(BaseModel):
+    offset: int = 0
+    limit: int = 100
+
+
+class FilterTodo(FilterPage):
     title: str | None = None
     description: str | None = None
     state: TodoState | None = None

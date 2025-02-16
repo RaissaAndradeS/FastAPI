@@ -80,6 +80,7 @@ def update_user(
         raise HTTPException(
             status_code=HTTPStatus.FORBIDDEN, detail='Not enough permissions'
         )
+
     try:
         current_user.username = user.username
         current_user.password = get_password_hash(user.password)
