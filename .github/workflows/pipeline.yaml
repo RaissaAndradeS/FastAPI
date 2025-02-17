@@ -21,10 +21,10 @@ jobs:
                 python-version: '3.12'
 
             - name: Instalar Poetry
-              run: pipx install poetry
+              run: poetry config virtualenvs.in-project true
 
             - name: Instalar dependências
               run: poetry install
 
             - name: Executar testes
-              run: poetry run task test
+              run: poetry run pytest -VV
