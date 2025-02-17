@@ -12,7 +12,7 @@ jobs:
       ACCESS_TOKEN_EXPIRE_MINUTES: ${{secrets.ACCESS_TOKEN_EXPIRE_MINUTES}} 
 
     steps:
-      - name: Copia os arquivos do repositório
+      - name: Copiar os arquivos do repositório
         uses: actions/checkout@v3
 
       - name: Instalar o Python
@@ -20,13 +20,7 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Gerar o arquivo poetry.lock
-        run: poetry lock
-        
-      - name: Instalar dependências
-        run: poetry install
-
-      - name: Instalar Poetry corretamente
+      - name: Instalar Poetry com o script oficial
         run: curl -sSL https://install.python-poetry.org | python3 -
 
       - name: Adicionar Poetry ao PATH
@@ -35,8 +29,8 @@ jobs:
       - name: Verificar instalação do Poetry
         run: poetry --version || echo "Poetry não está instalado corretamente!"
 
-      - name: Configurar Poetry para ambiente virtual local
-        run: poetry config virtualenvs.in-project true
+      - name: Gerar o arquivo poetry.lock
+        run: poetry lock
 
       - name: Instalar dependências
         run: poetry install
