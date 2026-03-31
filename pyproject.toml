@@ -15,6 +15,11 @@ pwdlib = {extras = ["argon2"], version = "^0.2.1"}
 python-multipart = "^0.0.18"
 pyjwt = "^2.10.1"
 psycopg = {extras = ["binary"], version = "^3.2.4"}
+pandas = "^2.2.0"
+numpy = "^1.26.0"
+pdfplumber = "0.10.4"
+python-magic-bin = "^0.4.14"
+PyPDF2 = "^3.0.0"
 
 
 [tool.poetry.group.dev.dependencies]
